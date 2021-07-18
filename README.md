@@ -6,7 +6,7 @@ This project is very simple speech/text processor built with Python. It uses Goo
 
 ## Setup Instructions
 
-For text to speech it uses [https://github.com/MycroftAI/mimic1](mimic1). You can provided binary zip (built in Arch Linux, just extract binary file to root directory) or you can build your own.
+For text to speech it uses [mimic1](https://github.com/MycroftAI/mimic1). You can provided binary zip (built in Arch Linux, just extract binary file to root directory) or you can build your own.
 
 For speech to text it uses Google speech recognition using SpeechRecognition library.
 
