@@ -1,5 +1,6 @@
 from fuzzywuzzy import fuzz
 import json
+import os
 
 def detectPercentage(results):
     matches = 0
@@ -11,7 +12,7 @@ def detectPercentage(results):
 
 def clearText(text):
     finalText = []
-    fin = open("stopwords.txt", "r")
+    fin = open(os.path.join(os.path.dirname(__file__), 'stopwords.txt'), "r")
     datas = fin.read()
     wordlist = json.loads(datas)
     fin.close()

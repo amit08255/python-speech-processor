@@ -1,10 +1,11 @@
-import text_detection as text
+from . import text_detection as text
 import json
+import os
 
 
 def detect(expression):
     query = expression.lower()
-    fin = open("expressions.txt")
+    fin = open(os.path.join(os.path.dirname(__file__), 'expressions.txt'), "r")
     data = fin.read()
     dataset = json.loads(data)
     
@@ -21,7 +22,7 @@ def response(expression):
         return defaultResponse
     
     query = expression.lower()
-    fin = open("responses.txt")
+    fin = open(os.path.join(os.path.dirname(__file__), 'responses.txt'), "r")
     data = fin.read()
     dataset = json.loads(data)
 
