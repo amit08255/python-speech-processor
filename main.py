@@ -1,7 +1,8 @@
 from pynput import keyboard
-import google_stt as stt
-import mimic_tts as tts
-import play_audio as audio
+import os
+import engine.google_stt as stt
+import engine.mimic_tts as tts
+import engine.play_audio as audio
 import expression_detection as expression
 
 
@@ -11,10 +12,10 @@ def parseCommands(text):
     tts.talk(commandResponse)
 
 def playStop():
-    audio.play("sounds/off.mp3")
+    audio.play(os.path.join(os.path.dirname(__file__), "sounds/off.mp3"))
 
 def playStart():
-    audio.play("sounds/on.mp3")
+    audio.play(os.path.join(os.path.dirname(__file__), "sounds/on.mp3"))
 
 def listenUser():
     command = stt.listen(playStart, playStop)
