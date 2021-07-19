@@ -2,9 +2,13 @@ from pynput import keyboard
 import google_stt as stt
 import mimic_tts as tts
 import play_audio as audio
+import expression_detection as expression
+
 
 def parseCommands(text):
-    print("parsing command: ", text)
+    command = expression.detect(text)
+    commandResponse = expression.response(command)
+    tts.talk(commandResponse)
 
 def playStop():
     audio.play("sounds/off.mp3")
